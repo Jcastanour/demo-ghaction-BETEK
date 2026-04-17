@@ -12,7 +12,8 @@ terraform {
 }
 
 resource "aws_s3_bucket" "web" {
-  bucket = "pablocastano6-githubactions-demo" # Lo crea Terraform automáticamente
+  bucket        = "pablocastano6-githubactions-demo" # Lo crea Terraform automáticamente
+  force_destroy = true                               # Permite a Terraform vaciar el bucket al destruirlo
 }
 
 resource "aws_s3_bucket_website_configuration" "web_config" {
